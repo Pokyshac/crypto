@@ -1,3 +1,3 @@
 # Crypto
 -----------------------------
-Some exercise 
+Some exercises
