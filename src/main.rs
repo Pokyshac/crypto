@@ -21,12 +21,12 @@ fn main() {
     // let output_table = task_1::table_to_string(&mult_table, m as usize).unwrap();
     // println!("{}", output_table);
 
-    // let a = -10;
+    // let a = 3;
     // let b = 1;
-    // let m = 9;
-    // let system = task_2::get_moved_deduction_system(a, b, m);
+    // let m = 5;
+    // let system = task_2::get_moved_deduction_system(a, b, m).unwrap();
     // task_2::print_deduction_system(&system);
 
-    // let n = 0;
+    // let n = 5;
     // println!("{}", calculate_eulers_function(n).unwrap());
 }

@@ -1,4 +1,5 @@
 use std::{io::{stdout, Write}, process::Stdio};
+use crate::tasks::utils;
 
 pub fn get_moved_deduction_system(a: i64, b: i64, m: i64) -> Result<Vec<i64>, String> {
     if m <= 0 {
@@ -7,7 +8,7 @@ pub fn get_moved_deduction_system(a: i64, b: i64, m: i64) -> Result<Vec<i64>, St
     
     let mut result = Vec::with_capacity(m as usize);
     for i in 0..m {
-        result.push((a * i + b) % m);
+        result.push(utils::modulo(a * i + b, m).1);
     }
 
     Ok(result)
