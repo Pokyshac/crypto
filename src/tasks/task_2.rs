@@ -1,12 +1,16 @@
 use std::{io::{stdout, Write}, process::Stdio};
 
-pub fn get_moved_deduction_system(a: i64, b: i64, m: i64) -> Vec<i64> {
+pub fn get_moved_deduction_system(a: i64, b: i64, m: i64) -> Result<Vec<i64>, String> {
+    if m <= 0 {
+        return Err(String::from("Argument 'm' can not be lower or equal zero"));
+    }
+    
     let mut result = Vec::with_capacity(m as usize);
     for i in 0..m {
         result.push((a * i + b) % m);
     }
 
-    result
+    Ok(result)
 }
 
 pub fn print_deduction_system(system: &Vec<i64>) {
