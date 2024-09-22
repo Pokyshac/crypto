@@ -10,6 +10,7 @@ use tasks::task_2;
 use tasks::task_3;
 
 use crate::tasks::task_3::calculate_eulers_function;
+use crate::tasks::task_5;
 
 mod tasks;
 
@@ -29,4 +30,13 @@ fn main() {
 
     // let n = 5;
     // println!("{}", calculate_eulers_function(n).unwrap());
+
+    let a = 7;
+    let k = 2024;
+    let m = 13;
+    let result =  task_5::remainder(a, k, m);
+    match result {
+        Ok(x) => println!("{}", x),
+        Err(error) => println!("{}", error)
+    }
 }

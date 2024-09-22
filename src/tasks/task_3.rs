@@ -4,7 +4,7 @@ use num::{iter::Range, Rational64};
 
 pub fn calculate_eulers_function(n: i64) -> Result<i64, String> {
     if n <= 0 {
-        return Err(String::from("Argument can not be lower or equal zero"))
+        return Err(String::from("Argument must be greater than zero"))
     }
     
     let prime_factors = get_prime_factors(n).unwrap();
@@ -18,7 +18,7 @@ pub fn calculate_eulers_function(n: i64) -> Result<i64, String> {
 
 pub fn get_prime_factors(n: i64) -> Result<HashSet<i64>, String>{
     if n <= 0 {
-        return Err(String::from("Argument can not be lower or equal zero"))
+        return Err(String::from("Argument must be greater than zero"))
     }
         
     let mut result: HashSet<i64> = HashSet::with_capacity(n as usize);

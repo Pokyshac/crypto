@@ -3,7 +3,7 @@ use crate::tasks::utils;
 
 pub fn get_moved_deduction_system(a: i64, b: i64, m: i64) -> Result<Vec<i64>, String> {
     if m <= 0 {
-        return Err(String::from("Argument 'm' can not be lower or equal zero"));
+        return Err(String::from("Argument 'm' must be greater than zero"));
     }
     
     let mut result = Vec::with_capacity(m as usize);
