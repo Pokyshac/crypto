@@ -2,6 +2,8 @@ use std::collections::{HashMap, HashSet};
 
 use num::{iter::Range, Rational64};
 
+use super::utils::get_prime_factors;
+
 pub fn calculate_eulers_function(n: i64) -> Result<i64, String> {
     if n <= 0 {
         return Err(String::from("Argument must be greater than zero"))
@@ -14,28 +16,4 @@ pub fn calculate_eulers_function(n: i64) -> Result<i64, String> {
     }
 
     Ok(n * result.numer() / result.denom()) 
-}
-
-pub fn get_prime_factors(n: i64) -> Result<HashSet<i64>, String>{
-    if n <= 0 {
-        return Err(String::from("Argument must be greater than zero"))
-    }
-        
-    let mut result: HashSet<i64> = HashSet::with_capacity(n as usize);
-    let mut n = n;
-    let mut delimiter = 2;
-    while delimiter * delimiter <= n {
-        if n % delimiter == 0 {
-            result.insert(delimiter);
-            n /= delimiter;
-        }
-        else {
-            delimiter += 1;
-        }
-    }
-    if n > 1 {
-        result.insert(n);
-    }
-
-    Ok(result)
 }
