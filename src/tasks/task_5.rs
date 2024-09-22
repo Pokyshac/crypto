@@ -19,6 +19,7 @@ pub fn remainder(a: i64, k: i64, m: i64) -> Result<i64, String> {
         
         r /= 2;
     }
+    result = modulo(result * d, m).1;
 
-    Ok(modulo(result * d, m).1)
+    Ok(result)
 }
