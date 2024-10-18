@@ -37,3 +37,25 @@ pub fn get_prime_factors(n: i64) -> Result<HashSet<i64>, String>{
     Ok(result)
 }
 
+pub fn euclidean_algorithm(a: i64, b: i64) -> (i64, i64) {
+    let mut a = a;
+    let mut b = b;
+    let mut x1 = 0;
+    let mut x2 = 1;
+    let mut y1 = 1;
+    let mut y2 = 0;
+
+    while b > 0 {
+        let (q, r) = modulo(a, b);     
+        let x = x2 - q * x1;
+        let y = y2 - q * y1;
+        a = b;
+        b = r;
+        x2 = x1;
+        x1 = x;
+        y2 = y1;
+        y1 = y;
+    }
+
+    return (x2, y2)
+}
