@@ -56,7 +56,7 @@ fn main() {
     }   
     alphabet.insert(' ', 15);
 
-    let text = String::from("abd ca aba");
+    let text = String::from("cca abcd ca aba");
     println!("{}", text);
     println!("-----------------");
 

@@ -52,8 +52,7 @@ pub fn get_rsa_keys(p: i64, q: i64) -> (OpenKey, HiddenKey) {
     let n = p * q;
     let phi = (p - 1) * (q - 1); 
     let open_exp = phi - 1;
-    let (a, b) = utils::euclidean_algorithm(phi, open_exp);
-    let hidden_exp = phi - i64::abs(i64::min(a, b));
+    let hidden_exp = utils::euclidean_algorithm(phi, open_exp).1;
 
     let open_key = OpenKey { exp: open_exp, n };
     let hidden_key = HiddenKey { exp: hidden_exp, n };
