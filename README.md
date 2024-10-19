@@ -20,10 +20,9 @@
 
 ## Task 7
 Реализовать алгоритм нахождения решений системы сравнений:
-$$\begin{cases}
-		x\equiv a \; (mod \; m)\\
-		x\equiv b \; (mod \; n)
-	\end{cases}$$
+```math
+$$\begin{cases}x\equiv a \; (mod \; m)\\x\equiv b \; (mod \; n)\end{cases}$$
+```
 
 ----------------------------------------
 ## Utils
