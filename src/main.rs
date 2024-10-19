@@ -15,6 +15,7 @@ use tasks::task_3;
 use tasks::task_4;
 use tasks::task_5;
 use tasks::task_6;
+use tasks::task_7;
 use tasks::utils;
 
 use crate::tasks::utils::get_prime_factors;
@@ -50,21 +51,24 @@ fn main() {
     // let m = 48;
     // println!("{}", task_4::find_eulers_function_arguments(m).unwrap().len());
 
-    let mut alphabet = task_6::Alphabet::new();
-    for i in 97..110 {
-        alphabet.insert(char::from_u32(i as u32).unwrap(), i - 96);
-    }   
-    alphabet.insert(' ', 15);
+    // let mut alphabet = task_6::Alphabet::new();
+    // for i in 97..110 {
+    //     alphabet.insert(char::from_u32(i as u32).unwrap(), i - 96);
+    // }   
+    // alphabet.insert(' ', 15);
 
-    let text = String::from("cca abcd ca aba");
-    println!("{}", text);
-    println!("-----------------");
+    // let text = String::from("cca abcd ca aba");
+    // println!("{}", text);
+    // println!("-----------------");
 
-    let (open_key, hidden_key) = task_6::get_rsa_keys(19, 41);
+    // let (open_key, hidden_key) = task_6::get_rsa_keys(19, 41);
 
-    let encoded_text = task_6::rsa_encode(&open_key, &text, &alphabet);
-    let decoded_text = task_6::rsa_decode(&hidden_key, &encoded_text, &alphabet);
+    // let encoded_text = task_6::rsa_encode(&open_key, &text, &alphabet);
+    // let decoded_text = task_6::rsa_decode(&hidden_key, &encoded_text, &alphabet);
 
-    println!("{:?}", encoded_text);
-    println!("{:?}", decoded_text);
+    // println!("{:?}", encoded_text);
+    // println!("{:?}", decoded_text);
+
+    let s = task_7::solve_comparison_system(3, 11);
+    println!("{}", utils::table_to_string(&s, 3, 11).unwrap());
 }
