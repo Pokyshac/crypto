@@ -1,6 +1,26 @@
 use std::{collections::HashSet, i64};
 use num::Integer;
 
+use crate::task_5::remainder;
+
+pub fn is_prime(n: i64) -> bool {
+    let range = num::integer::sqrt(n) + 1;
+    for i in 2..range {
+        if n % i == 0 {
+            return false;
+        }
+    }
+    true
+}
+
+pub fn check_comparison(a: i64, k: i64, b: i64, n: i64) -> bool {
+    let mut k = k;
+    if k % 2 == 0 {
+        let c = modulo(k * k, n).1;
+    }
+    todo!()
+}
+
 pub fn modulo(a: i64, b: i64) -> (i64, i64) {
     let signum = i64::signum(a) * i64::signum(b);
     let mut q: i64;

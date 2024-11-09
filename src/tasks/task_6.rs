@@ -32,7 +32,7 @@ impl Alphabet {
            self.pairs.insert(symbol, value);
            self.reverse_pairs.insert(value, symbol);
 
-           return true;
+           true
        }
        else {
            false
