@@ -10,15 +10,29 @@ pub fn is_prime(n: i64) -> bool {
             return false;
         }
     }
+    
     true
 }
 
-pub fn check_comparison(a: i64, k: i64, b: i64, n: i64) -> bool {
+pub fn is_valid_comparison(a: i64, k: i64, b: i64, n: i64) -> bool {
+    check_comparison(a, k, b, n, 1)
+}
+
+fn check_comparison(a: i64, k: i64, b: i64, n: i64, c: i64) -> bool {
+    if k == 1 {
+        return modulo(a * c - b, n).1 == 0;
+    }
+    
     let mut k = k;
     if k % 2 == 0 {
-        let c = modulo(k * k, n).1;
+        let d = modulo(a * a, n).1;
+        return check_comparison(d, k / 2, b, n, c);
+    } else {
+        k -= 1;
+        let d = modulo(a * a, n).1;
+        let v = modulo(c * a, n).1;
+        return check_comparison(d, k / 2, b, n, v);
     }
-    todo!()
 }
 
 pub fn modulo(a: i64, b: i64) -> (i64, i64) {
@@ -56,6 +70,20 @@ pub fn get_prime_factors(n: i64) -> Result<HashSet<i64>, String>{
     }
 
     Ok(result)
+}
+
+pub fn gcd(a: i64, b: i64) -> i64 {
+    let mut a = a;
+    let mut b = b;
+    let mut temp: i64;
+    while b != 0 {
+        temp = modulo(a, b).1;
+
+        a = b;
+        b = temp;
+    }
+
+    a
 }
 
 pub fn euclidean_algorithm(a: i64, b: i64) -> (i64, i64) {
