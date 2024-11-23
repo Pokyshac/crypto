@@ -1,8 +1,7 @@
-use num::PrimInt;
+use super::utils::{self, is_valid_comparison};
 
-use crate::{tasks::utils::is_valid_comparison, utils};
 
-pub fn find_base(n: i64) -> i64 {
+pub fn find_witness(n: i64) -> i64 {
     let prime_factors = utils::get_prime_factors(n).unwrap();
     let remainders: Vec<i64> = prime_factors.iter()
                                             .map(|x| utils::modulo(n - 1, *x).1)
@@ -20,10 +19,11 @@ pub fn find_base(n: i64) -> i64 {
 
         for remainder in remainders.iter() {
             if !is_valid_comparison(b, *remainder, 1, n) {
-                continue 'b_iter;
+                break 'b_iter;
             }
         }    
 
-        return b;
     }
+    
+    return b;
 }

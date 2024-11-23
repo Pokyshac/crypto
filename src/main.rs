@@ -18,10 +18,8 @@ use tasks::task_6;
 use tasks::task_7;
 use tasks::task_8;
 use tasks::task_9;
-use tasks::task_9::find_witness;
+use tasks::task_10;
 use tasks::utils;
-
-use crate::tasks::utils::get_prime_factors;
 
 mod tasks;
 
@@ -78,6 +76,10 @@ fn main() {
 
     // let n = 30;
     // println!("{}", task_8::is_mersenn_prime(n));
-    let n = 21;
-    println!("{}", find_witness(n));
+
+    let n = 15;
+    println!("{}", task_10::find_witness(n));
+
+    // let n = 21;
+    // println!("{}", task_9::find_base(n));
 }
