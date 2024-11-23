@@ -17,6 +17,7 @@ use tasks::task_5;
 use tasks::task_6;
 use tasks::task_7;
 use tasks::task_8;
+use tasks::task_9;
 use tasks::utils;
 
 use crate::tasks::utils::get_prime_factors;
@@ -74,6 +75,6 @@ fn main() {
     // let s = task_7::solve_comparison_system(3, 11);
     // println!("{}", utils::table_to_string(&s, 3, 11).unwrap());
 
-    let n = 13;
-    println!("{}", task_8::is_mersenn_prime(n));
+    // let n = 30;
+    // println!("{}", task_8::is_mersenn_prime(n));
 }

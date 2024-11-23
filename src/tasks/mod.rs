@@ -6,5 +6,5 @@ pub mod task_5;
 pub mod task_6;
 pub mod task_7;
 pub mod task_8;
-pub mod task_10;
+pub mod task_9;
 pub mod utils;
