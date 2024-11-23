@@ -77,9 +77,9 @@ fn main() {
     // let n = 30;
     // println!("{}", task_8::is_mersenn_prime(n));
 
-    let n = 15;
+    let n = 1000;
     println!("{}", task_10::find_witness(n));
 
-    // let n = 21;
+    // let n = 15;
     // println!("{}", task_9::find_base(n));
 }
