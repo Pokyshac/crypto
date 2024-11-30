@@ -20,6 +20,7 @@ use tasks::task_8;
 use tasks::task_9;
 use tasks::task_10;
 use tasks::task_11;
+use tasks::task_12;
 use tasks::utils;
 
 mod tasks;
@@ -84,6 +85,9 @@ fn main() {
     // let n = 15;
     // println!("{}", task_9::find_base(n));
 
-    let b = 7;
-    println!("{}", task_11::find_pseudoprime(b));
+    // let b = 5;
+    // println!("{}", task_11::find_pseudoprime(b));
+
+    let n = 103;
+    println!("{}", task_12::test_ferma(n));
 }
