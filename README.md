@@ -49,6 +49,6 @@ $$\begin{cases}x\equiv a \; (mod \; m)\\x\equiv b \; (mod \; n)\end{cases}$$
  - get_prime_factors - возвращает простые делители натурального числа без повторений.
  - euclidean_algorithm - расширенный алгоритм Евклида.
  - is_primt - проверка числа на простоту
- - is_valid_comparison - проверка выполнения сравнения вида: $a^k\equiv b\; (mod\; n)$
+ - is_valid_comparison - проверка выполнения сравнения вида: $a^k\equiv b (mod n)$
  - gcd - наибоьший общий делитель
  - table_to_string - вывод вектора значений в виде таблицы
