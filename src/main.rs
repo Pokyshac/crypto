@@ -5,6 +5,8 @@
     dead_code
 )]
 
+use stopwatch::Stopwatch;
+
 use std::io::Write;
 use std::process::Stdio;
 
@@ -21,6 +23,7 @@ use tasks::task_9;
 use tasks::task_10;
 use tasks::task_11;
 use tasks::task_12;
+use tasks::task_13;
 use tasks::utils;
 
 mod tasks;
@@ -88,6 +91,12 @@ fn main() {
     // let b = 5;
     // println!("{}", task_11::find_pseudoprime(b));
 
-    let n = 103;
-    println!("{}", task_12::test_ferma(n));
+    // let n = 103;
+    // println!("{}", task_12::test_ferma(n));
+
+    let m = 89;
+    let r = task_13::find_primitive_residues(m);
+    for v in r.iter() {
+        println!("{}", v);
+    }
 }
