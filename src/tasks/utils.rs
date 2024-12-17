@@ -1,4 +1,4 @@
-use std::{collections::HashSet, i64};
+use std::{collections::{HashMap, HashSet}, i64};
 use num::Integer;
 
 use crate::task_5::remainder;
@@ -70,6 +70,34 @@ pub fn get_prime_factors(n: i64) -> Result<HashSet<i64>, String>{
     }
 
     Ok(result)
+}
+
+pub fn get_prime_factors_with_degrees(n: i64) -> HashMap<i64, i64> {
+    let mut result = HashMap::<i64, i64>::with_capacity(n as usize);
+    let mut n = n;
+    let mut delimiter = 2;
+    while delimiter * delimiter <= n {
+        if n % delimiter == 0 {
+            if result.contains_key(&delimiter) {
+                *result.get_mut(&delimiter).unwrap() += 1;
+            } else {
+                result.insert(delimiter, 1);
+            }
+            n /= delimiter;
+        }
+        else {
+            delimiter += 1;
+        }
+    }
+    if n > 1 {
+        if result.contains_key(&n) {
+            *result.get_mut(&n).unwrap() += 1;
+        } else {
+            result.insert(n, 1);
+        }
+    }
+
+    result
 }
 
 pub fn gcd(a: i64, b: i64) -> i64 {

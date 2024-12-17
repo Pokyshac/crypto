@@ -51,9 +51,10 @@ fn main() {
     //     println!("{}", v);
     // }
 
-    let m = 10;
+    let m = 100001;
     let r = task_14::get_deduction_orders(m);
-    for v in r.iter() {
-        println!("{}: {}", v.0, v.1);
-    }
+    for p in r.iter() {
+        println!("{} : {}", p.0, p.1);
+    } 
+   
 }
